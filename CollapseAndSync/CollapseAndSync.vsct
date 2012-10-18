@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <Extern href="stdidcmd.h"/>
+    <Extern href="vsshlids.h"/>
+
+    <Commands package="guidCollapseAndSyncPkg">
+        <Groups>
+            <Group guid="guidCollapseAndSyncCmdSet" id="location" priority="0x0020">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_PROJWIN"/>
+            </Group>
+            <Group guid="guidCollapseAndSyncCmdSet" id="location" priority="0x0600">
+                <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_PROJECT"/>
+            </Group>
+        </Groups>
+
+        <Buttons>
+            <Button guid="guidCollapseAndSyncCmdSet" id="cmdCollapseSync" priority="0x0100" type="Button">
+                <Parent guid="guidCollapseAndSyncCmdSet" id="location" />
+                <Icon guid="guidImages" id="bmpCollapseTo" />
+                <Strings>
+                    <ButtonText>Collapse to Item</ButtonText>
+                </Strings>
+            </Button>
+        </Buttons>
+
+        <Bitmaps>
+            <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpSync, bmpCollapse, bmpCollapseTo"/>
+        </Bitmaps>
+    </Commands>
+    <KeyBindings>
+        <KeyBinding guid="guidCollapseAndSyncCmdSet" id="cmdCollapseSync" key1="0xBA" mod1="Control Alt" editor="guidVSStd97" />
+    </KeyBindings>
+
+    <Symbols>
+        <GuidSymbol name="guidCollapseAndSyncPkg" value="{8a270170-a54e-4815-86b6-9c0a93963640}" />
+
+        <GuidSymbol name="guidCollapseAndSyncCmdSet" value="{b042a405-501f-49bf-9732-124b654eaa8e}">
+            <IDSymbol name="location" value="0x1020" />
+            <IDSymbol name="cmdCollapseSync" value="0x0100" />
+        </GuidSymbol>
+
+        <GuidSymbol name="guidImages" value="{7ac5d4c3-dbe7-4e91-9bcb-15e047d6cdc8}" >
+            <IDSymbol name="bmpSync"       value="1" />
+            <IDSymbol name="bmpCollapse"   value="2" />
+            <IDSymbol name="bmpCollapseTo" value="3" />
+        </GuidSymbol>
+    </Symbols>
+</CommandTable>

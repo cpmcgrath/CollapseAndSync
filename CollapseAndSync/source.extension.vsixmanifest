@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="8a270170-a54e-4815-86b6-9c0a93963640" Version="1.0" Language="en-US" Publisher="cpmcgrath" />
+        <DisplayName>Solution Explorer Collapse And Sync</DisplayName>
+        <Description xml:space="preserve">Combines the "Collapse All" and "Sync with Active Document" into one command.</Description>
+        <MoreInfo>http://visualstudiogallery.msdn.microsoft.com/en-us/ef4ac3e9-d056-4383-8ca2-11721bd879b4</MoreInfo>
+        <License>license.txt</License>
+    </Metadata>
+    <Installation InstalledByMsi="false">
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+        <InstallationTarget Version="11.0" Id="Microsoft.VisualStudio.Premium" />
+        <InstallationTarget Version="11.0" Id="Microsoft.VisualStudio.Ultimate" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+        <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" d:Source="Installed" Version="11.0" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>
