@@ -25,7 +25,7 @@
         </Buttons>
 
         <Bitmaps>
-            <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpSync, bmpCollapse, bmpCollapseTo"/>
+            <Bitmap guid="guidImages" href="Resources\CollapseAndSync16.png" usedList="bmpCollapseTo"/>
         </Bitmaps>
     </Commands>
     <KeyBindings>
@@ -41,9 +41,7 @@
         </GuidSymbol>
 
         <GuidSymbol name="guidImages" value="{7ac5d4c3-dbe7-4e91-9bcb-15e047d6cdc8}" >
-            <IDSymbol name="bmpSync"       value="1" />
-            <IDSymbol name="bmpCollapse"   value="2" />
-            <IDSymbol name="bmpCollapseTo" value="3" />
+            <IDSymbol name="bmpCollapseTo" value="1" />
         </GuidSymbol>
     </Symbols>
 </CommandTable>

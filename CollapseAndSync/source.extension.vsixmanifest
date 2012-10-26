@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="8a270170-a54e-4815-86b6-9c0a93963640" Version="1.0" Language="en-US" Publisher="cpmcgrath" />
+        <Identity Id="8a270170-a54e-4815-86b6-9c0a93963640" Version="2.0" Language="en-US" Publisher="cpmcgrath" />
         <DisplayName>Solution Explorer Collapse And Sync</DisplayName>
         <Description xml:space="preserve">Combines the "Collapse All" and "Sync with Active Document" into one command.</Description>
         <MoreInfo>http://visualstudiogallery.msdn.microsoft.com/en-us/ef4ac3e9-d056-4383-8ca2-11721bd879b4</MoreInfo>
         <License>license.txt</License>
+        <Icon>Icon.png</Icon>
+        <PreviewImage>Resources\Preview.png</PreviewImage>
+        <Tags>Navigation, Solution Explorer</Tags>
     </Metadata>
     <Installation InstalledByMsi="false">
         <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
