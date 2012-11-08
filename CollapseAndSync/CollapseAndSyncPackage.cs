@@ -30,8 +30,14 @@ namespace cpmcgrath.CollapseAndSync
             var dte = (EnvDTE80.DTE2)GetService(typeof(SDTE));
             dte.Windows.Item(EnvDTE.Constants.vsWindowKindSolutionExplorer).Activate();
 
-            CollapseAll(dte);
-            SyncWithActiveDocument(dte);
+            try
+            {
+                CollapseAll(dte);
+                SyncWithActiveDocument(dte);
+            }
+            catch (COMException)
+            {
+            }
         }
 
         void CollapseAll(EnvDTE80.DTE2 dte)
