@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 namespace cpmcgrath.CollapseAndSync
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    [InstalledProductRegistration("#110", "#112", "4.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidCollapseAndSyncPkgString)]
     public sealed class CollapseAndSyncPackage : Package
