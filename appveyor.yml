@@ -1,4 +1,4 @@
-version: 7.0.{build}.0
+version: 8.0.{build}.0
 image: Visual Studio 2017
 
 platform:
@@ -12,7 +12,7 @@ environment:
 
 install:
     - cd "%APPVEYOR_BUILD_FOLDER%"
-    - nuget restore CollapseAndSync\packages.config -PackagesDirectory packages
+    - nuget restore
 
 build_script:
     - cd "%APPVEYOR_BUILD_FOLDER%"
