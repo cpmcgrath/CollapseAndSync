@@ -16,19 +16,18 @@ namespace cpmcgrath.CollapseAndSync
     {
         protected override void Initialize()
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
             base.Initialize();
 
             var mcs = GetService(typeof(IMenuCommandService)) as IMenuCommandService;
-            if (mcs == null)
-                return;
-
-            mcs.Register(GuidList.guidCollapseAndSyncCmdSet, PkgCmdIDList.cmdCollapseSync, CollapseAndSync);
+            mcs?.Register(GuidList.guidCollapseAndSyncCmdSet, PkgCmdIDList.cmdCollapseSync, CollapseAndSync);
         }
 
         void CollapseAndSync(object sender, EventArgs e)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
             var dte = (EnvDTE80.DTE2)GetService(typeof(SDTE));
-            dte.Windows.Item(EnvDTE.Constants.vsWindowKindSolutionExplorer).Activate();
+            dte?.Windows.Item(EnvDTE.Constants.vsWindowKindSolutionExplorer).Activate();
 
             try
             {
@@ -42,6 +41,7 @@ namespace cpmcgrath.CollapseAndSync
 
         void CollapseAll(EnvDTE80.DTE2 dte)
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
             int cmdidSolutionExplorerCollapseAll = 29;
             Guid guidCMDSETID_StandardCommandSet11 = new Guid("D63DB1F0-404E-4B21-9648-CA8D99245EC3");
             dte.Commands.Raise(guidCMDSETID_StandardCommandSet11.ToString("B"), cmdidSolutionExplorerCollapseAll, null, null);
