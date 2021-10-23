@@ -5,21 +5,22 @@ using System.ComponentModel.Design;
 using Microsoft.VisualStudio.Shell;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Shell.Interop;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace cpmcgrath.CollapseAndSync
 {
-    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [InstalledProductRegistration("#110", "#112", "6.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidCollapseAndSyncPkgString)]
-    public sealed class CollapseAndSyncPackage : Package
+    public sealed class CollapseAndSyncPackage : AsyncPackage
     {
-        protected override void Initialize()
+        protected async override Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            base.Initialize();
+            await base.InitializeAsync(cancellationToken, progress);
 
-            var mcs = GetService(typeof(IMenuCommandService)) as IMenuCommandService;
+            var mcs = await GetServiceAsync(typeof(IMenuCommandService)) as IMenuCommandService;
             mcs?.Register(GuidList.guidCollapseAndSyncCmdSet, PkgCmdIDList.cmdCollapseSync, CollapseAndSync);
         }
 
